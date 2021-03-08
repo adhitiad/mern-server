@@ -15,11 +15,11 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/adhitiad/mern-server?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/adhitiad/mern-server?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8" /> -->
+<img alt="Github issues" src="https://img.shields.io/github/issues/adhitiad/mern-server?color=56BEB8" />
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8" /> -->
+<img alt="Github forks" src="https://img.shields.io/github/forks/adhitiad/mern-server?color=56BEB8" /> 
 
   <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8" /> -->
 </p>
@@ -39,7 +39,7 @@ Status
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/adhitiad" target="_blank">Author</a>
 </p>
 
 <br>
@@ -72,15 +72,17 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/mern-server
+$ git clone https://github.com/adhitiad/mern-server
 
 # Access
 $ cd mern-server
 
 # Install dependencies
+$ npm install
 $ yarn
 
 # Run the project
+$ npm start
 $ yarn start
 
 # The server will initialize in the <http://localhost:5000>
