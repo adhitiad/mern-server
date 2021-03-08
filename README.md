@@ -9,11 +9,11 @@
 <h1 align="center">Mern Server</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/adhitiad/mern-server?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/adhitiad/mern-server?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/adhitiad/mern-server?color=56BEB8">
 
   <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/mern-server?color=56BEB8">
 
@@ -90,7 +90,7 @@ $ yarn start
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/adhitiad/mern-server" target="_blank">adhitiad</a>
 
 &#xa0;
 
