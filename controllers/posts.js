@@ -28,14 +28,16 @@ export const getPost = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  const { title, body, selectedFile, author, tags } = req.body;
+  const image = req.file.path;
+  const title = req.body.title;
+  const body = req.body.body;
+  const author = req.body.author;
 
   const newPostMessage = new PostMessage({
     title,
     body,
-    selectedFile,
+    image,
     author,
-    tags,
   });
 
   try {
@@ -49,12 +51,12 @@ export const createPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
   const { id } = req.params;
-  const { title, body, author, selectedFile, tags } = req.body;
+  const { title, body, author, image } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id))
     return res.status(404).send(`No post with id: ${id}`);
 
-  const updatedPost = { author, title, body, tags, selectedFile, _id: id };
+  const updatedPost = { author, title, body, image, _id: id };
 
   await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
 
@@ -72,21 +74,21 @@ export const deletePost = async (req, res) => {
   res.json({ message: "Post deleted successfully." });
 };
 
-export const likePost = async (req, res) => {
-  const { id } = req.params;
+// export const likePost = async (req, res) => {
+//   const { id } = req.params;
 
-  if (!mongoose.Types.ObjectId.isValid(id))
-    return res.status(404).send(`No post with id: ${id}`);
+//   if (!mongoose.Types.ObjectId.isValid(id))
+//     return res.status(404).send(`No post with id: ${id}`);
 
-  const post = await PostMessage.findById(id);
+//   const post = await PostMessage.findById(id);
 
-  const updatedPost = await PostMessage.findByIdAndUpdate(
-    id,
-    { likeCount: post.likeCount + 1 },
-    { new: true }
-  );
+//   const updatedPost = await PostMessage.findByIdAndUpdate(
+//     id,
+//     { likeCount: post.likeCount + 1 },
+//     { new: true }
+//   );
 
-  res.json(updatedPost);
-};
+//   res.json(updatedPost);
+// };
 
 export default router;
