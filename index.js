@@ -21,9 +21,13 @@ mongoose
   .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>
     app.listen(PORT, () =>
-      console.log(`Server Running on Port: http://localhost:${PORT}`)
+      console.log(`Server Berjalan di Port: http://localhost:${PORT}`)
     )
   )
-  .catch((error) => console.log(`${error} password atau username salah bro`));
+  .catch((error) =>
+    console.log(
+      `${error} password atau username mongodb salah bro atau cek koneksi internet server lu`
+    )
+  );
 
 mongoose.set("useFindAndModify", false);
