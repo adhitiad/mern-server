@@ -2,39 +2,39 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
-import multer from "multer";
+import multer from 'multer';
+import path from 'path'
+
 
 import postRoutes from "./routes/posts.js";
 
 const app = express();
 
-const fileStorage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "images");
+
+// konfigurasi diskStorage multer
+const diskStorage = multer.diskStorage({
+  // konfigurasi folder penyimpanan file
+  destination: function (req, file, cb) {
+    cb(null, "./image");
   },
-  filename: (req, res, cb) => {
-    cb(null, new Date().getTime() + "-" + file.originalname);
+  filename: function (req, file, cb) {
+    cb(null, new Date().getTime() + '-' + file.originalname);
   },
 });
 
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "images/png" ||
-    file.mimetype === "images/jpg" ||
-    file.mimetype === "images/jpeg"
-  ) {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+app.use(multer({ storage: diskStorage }).single('image'));
+app.use('/image', express.static(path.join('image')));
 app.use("/posts", postRoutes);
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(bodyParser.json({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(
-  multer({ storage: fileStorage, fileFilter: fileFilter }).single("image")
-);
+
+
 
 const CONNECTION_URL =
   "mongodb+srv://adhitia:adhitia96@dev1.g2lf0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";

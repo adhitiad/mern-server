@@ -28,15 +28,15 @@ export const getPost = async (req, res) => {
 };
 
 export const createPost = async (req, res) => {
-  const image = req.file.path;
   const title = req.body.title;
   const body = req.body.body;
   const author = req.body.author;
+  const image = req.file.path;
 
   const newPostMessage = new PostMessage({
-    title,
-    body,
-    image,
+    title: title,
+    body: body,
+    image: image,
     author,
   });
 
